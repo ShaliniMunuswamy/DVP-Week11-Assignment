@@ -2,8 +2,6 @@ package com.example;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println(
-            "Hello EMC Students, welcome to CI/CD!"
-        );
+        System.out.println("My first automated CI/CD build!");
     }
 }
