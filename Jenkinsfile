@@ -16,13 +16,19 @@ pipeline {
         stage('Verify Tools') {
             steps {
                 bat 'java -version'
-                bat 'mvn -version'
+                script {
+                    def mvnHome = tool 'Maven3'
+                    bat "\"${mvnHome}\\bin\\mvn.cmd\" -version"
+                }
             }
         }
 
         stage('Build with Maven') {
             steps {
-                bat 'mvn clean package'
+                script {
+                    def mvnHome = tool 'Maven3'
+                    bat "\"${mvnHome}\\bin\\mvn.cmd\" clean package"
+                }
             }
         }
 
